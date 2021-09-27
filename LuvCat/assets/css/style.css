@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Ubuntu;
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Navigation */
+#nav-bar {
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  height: 46px;
+  background-color: #fb9ec4;
+}
+.nav-section {
+  display: flex;
+  height: 100%;
+  width: fit-content;
+}
+.nav-section .nav-btn {
+  height: 100%;
+  line-height: 46px;
+  display: inline-block;
+  padding: 0 15px;
+}
+.nav-section .nav-btn a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.search-btn:hover,
+.nav-section li:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  text-align: center;
+  padding: 0px 10px 0px 15px;
+}
+.search-icon {
+  color: white;
+  line-height: 46px;
+  font-size: 25px;
+}
+.nav-overlay {
+  z-index: 1;
+  animation: fadein linear 0.1s;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.nav-mobile-btn {
+  text-align: center;
+  display: none;
+  padding: 0px 10px 0px 15px;
+  left: 0;
+  top: 0;
+}
+.nav-mobile-btn-icon {
+  color: white;
+  line-height: 46px;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.nav-section-mobile {
+  z-index: 2;
+  top: 0;
+  transition: all linear 0.1s;
+  transform: translateX(-100%);
+  padding-top: 1.6rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  position: fixed;
+  display: none;
+  background-color: #fff;
+  flex-direction: column;
+}
+#nav-mobile-input {
+  display: none;
+}
+#nav-mobile-input:checked ~ .nav-overlay {
+  display: block;
+}
+#nav-mobile-input:checked ~ .nav-section-mobile {
+  transform: translateX(0%);
+}
+/* Header */
+#header {
+  position: relative;
+  padding-top: 600px;
+  margin-top: -200px;
+  background-size: cover;
+}
+#header .text-section {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 29%;
+}
+#header .heading {
+  text-shadow: 2px 2px black;
+  color: #8865ff;
+  font-size: 70px;
+}
+
+/* About */
+#about {
+  width: 100%;
+  display: flex;
+}
+.section-container {
+  width: 100%;
+}
+.section-container {
+  text-align: center;
+}
+
+.about-subheading {
+  color: #ff6fa5;
+  font-size: 50px;
+  padding: 16px 16px;
+}
+.about-content {
+  flex-direction: column;
+  align-items: center;
+}
+.about-text {
+  margin-top: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  text-align: justify;
+}
+.about-img {
+  margin-bottom: 10px;
+  display: block;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+/* Gallery */
+.gallery-container .gallery-heading,
+.about-heading {
+  width: 100%;
+  text-align: center;
+  margin-top: 48px;
+  padding: 16px 16px;
+  color: black;
+  font-size: 70px;
+}
+#gallery .gallery-container {
+  text-align: center;
+}
+#gallery .gallery-images {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-images .gallery-images-item {
+  display: flex;
+  align-items: center;
+  object-fit: contain;
+  margin: 20px 0;
+}
+.gallery-images .gallery-images-item img {
+  margin: auto;
+  max-width: 100%;
+  display: block;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Mobiles */
+@media (max-width: 568px) {
+  #header {
+    margin: 0;
+    padding-top: 400px;
+  }
+  .search-btn {
+    right: 10px;
+  }
+  .nav-mobile-btn {
+    display: block;
+  }
+  .about-content {
+    padding: 0 1.6rem;
+  }
+  .nav-section {
+    display: none;
+  }
+  .nav-section-mobile {
+    display: flex;
+  }
+  .nav-element-link-mobile {
+    color: #fb9ec4;
+    display: block;
+    padding: 1.5rem 1rem;
+    font-size: 2rem;
+  }
+}
+/* Tablet */
+@media (min-width: 568px) and (min-width: 992px) {
+}
