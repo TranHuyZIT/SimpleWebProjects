@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" onclick="login()" class="toggle-btn">
+            Login
+          </button>
+          <button type="button" onclick="register()" class="toggle-btn">
+            Register
+          </button>
+        </div>
+        <div class="social-icons">
+          <img src="./fb.png" alt="facebook" />
+          <img src="./tw.png" alt="twitter" />
+          <img src="./gp.png" alt="gp" />
+        </div>
+        <form id="login" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User ID"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+          <input type="checkbox" class="check-box" />
+          <span>Remember Password</span>
+          <button type="submit" class="submit-btn">Log In</button>
+        </form>
+        <form id="register" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User ID"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+          <input type="checkbox" class="check-box" />
+          <span>I agree to the terms and conditions</span>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      var loginBtn = document.getElementById("login");
+      var registerBtn = document.getElementById("register");
+      var labelTag = document.getElementById("btn");
+      console.log(loginBtn, registerBtn, labelTag);
+      function register() {
+        loginBtn.style.left = "-400px";
+        registerBtn.style.left = "50px";
+        labelTag.style.left = "110px";
+      }
+      function login() {
+        loginBtn.style.left = "50px";
+        registerBtn.style.left = "450px";
+        labelTag.style.left = "0";
+      }
+    </script>
+  </body>
+</html>
